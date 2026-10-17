@@ -1,0 +1,10 @@
+prompt_id,compared,identical_queries,total
+P1_RTF,opus run1 vs opus run2,135,155
+P1_RTF,opus run1 vs opus run3,150,155
+P1_RTF,opus run1 vs haiku run1,110,155
+P2_FewShot,opus run1 vs opus run2,155,155
+P2_FewShot,opus run1 vs opus run3,155,155
+P2_FewShot,opus run1 vs haiku run1,155,155
+P3_CoT,opus run1 vs opus run2,155,155
+P3_CoT,opus run1 vs opus run3,155,155
+P3_CoT,opus run1 vs haiku run1,155,155

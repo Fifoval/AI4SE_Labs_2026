@@ -1,0 +1,4 @@
+prompt_id,model,correct,total,accuracy,sql_errors,inference_time_s,time_per_question_s,tokens,tool_uses,sql_execution_time_s
+P1_RTF,claude-opus-5-5,154,155,0.9935,0,224.7,1.45,84894,5,0.08
+P2_FewShot,claude-opus-5-5,154,155,0.9935,0,221.0,1.43,85647,4,0.075
+P3_CoT,claude-opus-5-5,154,155,0.9935,0,278.7,1.8,93973,4,0.071

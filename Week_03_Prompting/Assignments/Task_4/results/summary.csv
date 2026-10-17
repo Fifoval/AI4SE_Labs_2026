@@ -1,0 +1,7 @@
+model,prompt_id,runs,accuracy,mean_f1,time_mean_s,time_sd_s,cat_mean,cat_sd
+opus,P1_RTF,3,0.9935,0.9935,224.2,0.9,41.2,0.2
+opus,P2_FewShot,3,0.9935,0.9935,220.1,1.1,42.0,0.2
+opus,P3_CoT,3,0.9935,0.9935,369.4,155.3,27.6,9.4
+haiku,P1_RTF,1,0.9935,0.9935,143.8,,64.2,
+haiku,P2_FewShot,1,0.9935,0.9935,114.5,,80.7,
+haiku,P3_CoT,1,0.9935,0.9935,148.6,,62.2,

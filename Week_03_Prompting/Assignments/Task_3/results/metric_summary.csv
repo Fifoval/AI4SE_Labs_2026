@@ -1,0 +1,4 @@
+prompt_id,exact_match_accuracy,mean_f1,inference_time_min,cat_per_min
+P1_RTF,0.9935,0.9935,3.74,41.12
+P2_FewShot,0.9935,0.9935,3.68,41.81
+P3_CoT,0.9935,0.9935,4.64,33.15
