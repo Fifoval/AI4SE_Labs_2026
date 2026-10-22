@@ -1,0 +1,82 @@
+[load_corpus] 20 documents
+[metadata] D01 email           2009-04-07 auth=2 conversations/conv_pines014_material_volume.eml
+[metadata] D02 email           2009-04-09 auth=2 conversations/conv_pines015_capacity_interface.eml
+[metadata] D03 email           2009-04-14 auth=2 conversations/conv_pines016_shelf_space.eml
+[metadata] D04 email           2009-05-12 auth=2 conversations/conv_pines018_item_transfer.eml
+[metadata] D05 email           2009-04-17 auth=2 conversations/conv_pines019_020_missing_intransit.eml
+[metadata] D06 email           2009-04-22 auth=2 conversations/conv_pines021_item_purging.eml
+[metadata] D07 email           2009-04-27 auth=2 conversations/conv_pines022_deletions.eml
+[metadata] D08 email           2009-04-30 auth=2 conversations/conv_pines023_patron_characteristics.eml
+[metadata] D09 email           2009-05-06 auth=2 conversations/conv_pines024_inactive_patrons.eml
+[metadata] D10 draft_spec      2009-01-27 auth=1 early_draft_srs_galecia.txt
+[metadata] D11 email           2009-07-14 auth=2 email_financial_reports.eml
+[metadata] D12 email           2009-07-28 auth=2 email_report_features.eml
+[metadata] D13 email           2009-04-09 auth=2 email_staff_login.eml
+[metadata] D14 reference       2009-03-15 auth=1 evergreen_reference_2009.txt
+[metadata] D15 interview       2009-05-08 auth=2 interview_cataloging_2009-05-08.txt
+[metadata] D16 interview       2009-05-10 auth=2 interview_sysadmin_2009-05-10.txt
+[metadata] D17 meeting_minutes 2009-03-15 auth=3 meeting_minutes/meeting_2009-03-15_minutes.txt
+[metadata] D18 meeting_minutes 2009-07-20 auth=3 meeting_minutes/meeting_2009-07-20_minutes.txt
+[metadata] D19 meeting_minutes 2009-06-30 auth=3 meeting_tech_subcommittee_2009-06-30.txt
+[metadata] D20 survey          2009-04-20 auth=2 survey_results_2009.txt
+[chunk] 22 chunks
+[extract] D01.1: 15 items (cached)
+[extract] D02.1: 11 items (cached)
+[extract] D03.1: 10 items (cached)
+[extract] D04.1: 21 items (cached)
+[extract] D06.1: 14 items (cached)
+[extract] D05.1: 6 items (cached)[extract] D07.1: 16 items (cached)
+
+[extract] D09.1: 15 items (cached)
+[extract] D08.1: 12 items (cached)
+[extract] D10.3: 72 items (cached)
+[extract] D12.1: 33 items (cached)
+[extract] D13.1: 14 items (cached)[extract] D10.1: 40 items (cached)
+
+[extract] D11.1: 18 items (cached)
+[extract] D15.1: 28 items (cached)
+[extract] D10.2: 63 items (cached)
+[extract] D16.1: 22 items (cached)
+[extract] D19.1: 37 items (cached)[extract] D14.1: 56 items (cached)
+[extract] D17.1: 18 items (cached)
+[extract] D18.1: 24 items (cached)
+[extract] D20.1: 37 items (cached)
+
+[collect] 582 candidates (2 with unverified quote), 0 rejected by extractor; source priority {'Must': 60, 'Should': 497, 'Could': 25}, 15 from explicit markers
+[structure] split RPT (191 candidates) into COL, CIR, PAT, RPF
+[structure] 15 areas {'COL': 33, 'CIR': 53, 'PAT': 37, 'RPF': 68, 'ADH': 55, 'TMP': 56, 'EXP': 25, 'DATA': 29, 'XFER': 22, 'TRANS': 16, 'AUD': 36, 'SEC': 45, 'SYS': 57, 'UI': 34, 'INV': 16}, 18 glossary terms
+[consolidate] PAT: 37 candidates -> 25 requirements, 0 discarded
+[consolidate] CIR: 53 candidates -> 32 requirements, 0 discarded
+[consolidate] COL: 33 candidates -> 9 requirements, 0 discarded[consolidate] EXP: 25 candidates -> 10 requirements, 0 discarded
+[consolidate] TMP: 56 candidates -> 17 requirements, 0 discarded
+[consolidate] ADH: 55 candidates -> 18 requirements, 0 discarded
+[consolidate] DATA: 29 candidates -> 10 requirements, 1 discarded
+
+[consolidate] RPF: 68 candidates -> 13 requirements, 1 discarded
+[consolidate] XFER: 22 candidates -> 14 requirements, 0 discarded
+[consolidate] TRANS: 16 candidates -> 9 requirements, 0 discarded[consolidate] AUD: 36 candidates -> 9 requirements, 0 discarded
+
+[consolidate] SYS: 57 candidates -> 22 requirements, 0 discarded[consolidate] SEC: 45 candidates -> 10 requirements, 0 discarded
+
+[consolidate] UI: 34 candidates -> 9 requirements, 1 discarded
+[consolidate] INV: 16 candidates -> 10 requirements, 0 discarded
+[trace] 217 requirements, coverage gaps: 3 candidates, merge-fidelity warnings: 0
+[conflicts] 849 similar pairs checked in 22 batches: 13 issues found, 13 applicable in total
+[resolve] 0 confirmed conflicts blacklisted, 6 duplicates merged (6 of them by fusing both texts; 0 reported duplicates kept apart), 7 open issues (tensions / unconfirmed conflicts)
+[critic] round 1: passed=False, gaps=2, areas to revise=['ADH', 'CIR', 'PAT', 'SEC'], new duplicate/conflict pairs=3
+[consolidate] SEC: 45 candidates -> 10 requirements, 0 discarded
+[consolidate] PAT: 37 candidates -> 25 requirements, 0 discarded
+[consolidate] ADH: 55 candidates -> 19 requirements, 0 discarded
+[consolidate] CIR: 53 candidates -> 32 requirements, 0 discarded
+[trace] 218 requirements, coverage gaps: 0 candidates, merge-fidelity warnings: 0
+[conflicts] 861 similar pairs checked in 22 batches: 7 issues found, 16 applicable in total
+[resolve] 0 confirmed conflicts blacklisted, 9 duplicates merged (9 of them by fusing both texts; 0 reported duplicates kept apart), 7 open issues (tensions / unconfirmed conflicts)
+[critic] round 2: passed=False, gaps=0, areas to revise=['DATA', 'RPF', 'SYS'], new duplicate/conflict pairs=2
+[consolidate] DATA: 29 candidates -> 10 requirements, 1 discarded
+[consolidate] SYS: 57 candidates -> 22 requirements, 0 discarded
+[consolidate] RPF: 68 candidates -> 13 requirements, 1 discarded
+[trace] 218 requirements, coverage gaps: 0 candidates, merge-fidelity warnings: 1
+[conflicts] 850 similar pairs checked in 22 batches: 12 issues found, 18 applicable in total
+[resolve] 0 confirmed conflicts blacklisted, 8 duplicates merged (8 of them by fusing both texts; 0 reported duplicates kept apart), 10 open issues (tensions / unconfirmed conflicts)
+[critic] round 3: passed=False, gaps=0, areas to revise=['DATA', 'EXP', 'PAT', 'SYS', 'TMP'], new duplicate/conflict pairs=2
+[render] 210 requirements, 3 blacklisted -> output\requirements.md
