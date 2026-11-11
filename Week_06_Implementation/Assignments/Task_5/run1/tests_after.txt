@@ -1,0 +1,225 @@
+...................................................E.EEE.............................................F.............................................................................................................................................................................EE...E.............................E............E.....E..E.................E.EE.EEE...........................................................................................................................
+======================================================================
+ERROR: test_cancelled_is_terminal (tests.test_enums.OrderStatusTests.test_cancelled_is_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_enums.py", line 61, in test_cancelled_is_terminal
+    self.assertIs(OrderStatus.CANCELLED.is_terminal, True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\enums.py", line 49, in is_terminal
+    return not OrderStateMachine.TRANSITIONS.get(self, frozenset())
+               ^^^^^^^^^^^^^^^^^
+NameError: name 'OrderStateMachine' is not defined
+
+======================================================================
+ERROR: test_new_is_not_terminal (tests.test_enums.OrderStatusTests.test_new_is_not_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_enums.py", line 64, in test_new_is_not_terminal
+    self.assertIs(OrderStatus.NEW.is_terminal, False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\enums.py", line 49, in is_terminal
+    return not OrderStateMachine.TRANSITIONS.get(self, frozenset())
+               ^^^^^^^^^^^^^^^^^
+NameError: name 'OrderStateMachine' is not defined
+
+======================================================================
+ERROR: test_reserved_is_not_terminal (tests.test_enums.OrderStatusTests.test_reserved_is_not_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_enums.py", line 67, in test_reserved_is_not_terminal
+    self.assertIs(OrderStatus.RESERVED.is_terminal, False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\enums.py", line 49, in is_terminal
+    return not OrderStateMachine.TRANSITIONS.get(self, frozenset())
+               ^^^^^^^^^^^^^^^^^
+NameError: name 'OrderStateMachine' is not defined
+
+======================================================================
+ERROR: test_shipped_is_terminal (tests.test_enums.OrderStatusTests.test_shipped_is_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_enums.py", line 58, in test_shipped_is_terminal
+    self.assertIs(OrderStatus.SHIPPED.is_terminal, True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\enums.py", line 49, in is_terminal
+    return not OrderStateMachine.TRANSITIONS.get(self, frozenset())
+               ^^^^^^^^^^^^^^^^^
+NameError: name 'OrderStateMachine' is not defined
+
+======================================================================
+ERROR: test_advance_from_terminal_raises (tests.test_orders.OrderAdvanceTests.test_advance_from_terminal_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 176, in test_advance_from_terminal_raises
+    o.advance(OrderStatus.RESERVED)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 103, in advance
+    new_status = self._machine.transition(self._status, target)
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 39, in transition
+    raise ValueError(f"Cannot transition from {source} to {target}")
+ValueError: Cannot transition from OrderStatus.CANCELLED to OrderStatus.RESERVED
+
+======================================================================
+ERROR: test_advance_to_same_status_raises (tests.test_orders.OrderAdvanceTests.test_advance_to_same_status_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 181, in test_advance_to_same_status_raises
+    o.advance(OrderStatus.NEW)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 103, in advance
+    new_status = self._machine.transition(self._status, target)
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 39, in transition
+    raise ValueError(f"Cannot transition from {source} to {target}")
+ValueError: Cannot transition from OrderStatus.NEW to OrderStatus.NEW
+
+======================================================================
+ERROR: test_illegal_advance_raises_and_keeps_status (tests.test_orders.OrderAdvanceTests.test_illegal_advance_raises_and_keeps_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 169, in test_illegal_advance_raises_and_keeps_status
+    o.advance(OrderStatus.SHIPPED)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 103, in advance
+    new_status = self._machine.transition(self._status, target)
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 39, in transition
+    raise ValueError(f"Cannot transition from {source} to {target}")
+ValueError: Cannot transition from OrderStatus.NEW to OrderStatus.SHIPPED
+
+======================================================================
+ERROR: test_by_status_non_status_raises_on_first_next (tests.test_orders.OrderLogTests.test_by_status_non_status_raises_on_first_next)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 409, in test_by_status_non_status_raises_on_first_next
+    next(gen)
+    ~~~~^^^^^
+StopIteration
+
+======================================================================
+ERROR: test_call_is_alias_for_transition (tests.test_orders.OrderStateMachineTests.test_call_is_alias_for_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 72, in test_call_is_alias_for_transition
+    sm(OrderStatus.SHIPPED, OrderStatus.NEW)
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 43, in __call__
+    return self.transition(source, target)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 39, in transition
+    raise ValueError(f"Cannot transition from {source} to {target}")
+ValueError: Cannot transition from OrderStatus.SHIPPED to OrderStatus.NEW
+
+======================================================================
+ERROR: test_transition_illegal_raises (tests.test_orders.OrderStateMachineTests.test_transition_illegal_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 64, in test_transition_illegal_raises
+    OrderStateMachine().transition(OrderStatus.NEW, OrderStatus.SHIPPED)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 39, in transition
+    raise ValueError(f"Cannot transition from {source} to {target}")
+ValueError: Cannot transition from OrderStatus.NEW to OrderStatus.SHIPPED
+
+======================================================================
+ERROR: test_total_reflects_merged_quantities_for_bulk_discount (tests.test_orders.OrderTotalTests.test_total_reflects_merged_quantities_for_bulk_discount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_orders.py", line 198, in test_total_reflects_merged_quantities_for_bulk_discount
+    self.assertEqual(o.total, Money(270))
+                     ^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\orders.py", line 87, in total
+    return self._pricing.price(self._items)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+ERROR: test_at_threshold_applies_discount (tests.test_pricing.BulkDiscountPriceTests.test_at_threshold_applies_discount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_pricing.py", line 127, in test_at_threshold_applies_discount
+    self.assertEqual(d.price(items), Money(2700))
+                     ~~~~~~~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+ERROR: test_call_matches_price (tests.test_pricing.BulkDiscountPriceTests.test_call_matches_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_pricing.py", line 164, in test_call_matches_price
+    self.assertEqual(d(items), d.price(items))
+                     ~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\base.py", line 43, in __call__
+    return self.price(items)
+           ~~~~~~~~~~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+ERROR: test_discount_uses_floor_division (tests.test_pricing.BulkDiscountPriceTests.test_discount_uses_floor_division)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_pricing.py", line 144, in test_discount_uses_floor_division
+    self.assertEqual(d.price(items), Money(300))
+                     ~~~~~~~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+ERROR: test_full_discount_yields_zero (tests.test_pricing.BulkDiscountPriceTests.test_full_discount_yields_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_pricing.py", line 149, in test_full_discount_yields_zero
+    self.assertEqual(d.price(items), Money(0))
+                     ~~~~~~~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+ERROR: test_quantity_summed_across_lines (tests.test_pricing.BulkDiscountPriceTests.test_quantity_summed_across_lines)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_pricing.py", line 133, in test_quantity_summed_across_lines
+    self.assertEqual(d.price(items), Money(1080))
+                     ~~~~~~~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+ERROR: test_wraps_base_with_tax (tests.test_pricing.BulkDiscountPriceTests.test_wraps_base_with_tax)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_pricing.py", line 155, in test_wraps_base_with_tax
+    self.assertEqual(d.price(items), Money(990))
+                     ~~~~~~~^^^^^^^
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\playground\pricing.py", line 70, in price
+    discount = base * self._percent_off // 100
+               ~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~
+TypeError: unsupported operand type(s) for //: 'Money' and 'int'
+
+======================================================================
+FAIL: test_contains_present_even_if_zero_on_hand_after_commit (tests.test_inventory.InventoryLedgerContainsLenIterTests.test_contains_present_even_if_zero_on_hand_after_commit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fifov\Documents\MATFYZ\2mAIN\AI\AI4SE_Labs_2026\Week_06_Implementation\Assignments\AI4SE_Playground\playground\tests\test_inventory.py", line 232, in test_contains_present_even_if_zero_on_hand_after_commit
+    self.assertTrue("EL-1001" in self.ledger)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 481 tests in 0.021s
+
+FAILED (failures=1, errors=17)
